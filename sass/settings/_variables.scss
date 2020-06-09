@@ -53,3 +53,37 @@ $pv-white: #ffffff;
 /* -- Color navy --  */
 
 $pv-navy: #1F2532;
+
+//  ===============================================================
+
+// Font family
+
+$base-font-family: "proxima nova", "sans serif";
+$body-font-family: $base-font-family;
+$fallback-font-family: "Helvetica Neue", sans-serif !default;
+
+
+
+// Font sizes
+
+// Header
+
+$font-h1: 18px !default;
+$font-h2: 16px !default;
+
+// Title
+
+$font-title: 12px !default;
+
+// Body
+
+$font-small: 11px !default;
+$font-regular: 13px !default;
+$font-medium: 16px !default;
+$font-large: 18px !default;
+
+// Font weight
+
+$font-semibold: 600 !default;
+
+
