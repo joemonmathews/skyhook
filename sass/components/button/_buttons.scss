@@ -1,19 +1,30 @@
 
 @import "../../settings/variables";
+@import "../../utilities/utilities/cursors";
+@import "../../utilities/utilities/borders";
 
 
 
 @mixin button-variant($color,$background,$border-color) {
 	color: $color;
 	background-color: $background;
-	border-color: $border-color;
+	border-radius: $base-border-radius;
+	height: map-get($pv-sizes, small);
+	min-width: map-get($pv-sizes, small);
+	box-shadow: none;
 	transition: all .2s ease;
+	vertical-align: middle;
+	text-align: center;
+	@extend .cursor-pointer;
+	@include pv-border;
+	border-color: transparent;
+
 
 	&:hover,
 	&:focus,
 	&:active {
 		color: $color;
-		background-color: darken($background, 10%);
+		background-color: darken($background, 20%);
 		border-color: darken($border-color, 8%);
 	}
 
@@ -23,22 +34,32 @@
 		&:hover,
 		&:focus,
 		&:active {
-      background-color: lighten($background, 20%);
-  		border-color: lighten($border-color, 16%);
+      		background-color: lighten($background, 20%);
+			border-color: lighten($border-color, 16%);
+			@extend .cursor-default;
+		  
 		}
+	}
+	img, i {
+		vertical-align: text-bottom;
 	}
 }
 
-.button-primary {
+.pv-button-primary {
     @include button-variant($pv-white, $pv-green-regular, $pv-green-regular);
 }
 
-.button-sc {
-    @include button-variant($pv-white, $pv-green-regular, $pv-green-regular);
+.pv-button-destructive {
+    @include button-variant($pv-white, $pv-red-regular, $pv-red-regular);
 }
-.button-tc {
-    @include button-variant($pv-white, $pv-green-regular, $pv-green-regular);
+.pv-button-naked {
+    @include button-variant($pv-grayscale-2, transparent, transparent);
 }
-.button-4c {
-    @include button-variant($pv-white, $pv-green-regular, $pv-green-regular);
+.pv-button-naked-inverse {
+    @include button-variant($pv-white, transparent, transparent);
+}
+.pv-button-ghost {
+	@include button-variant($pv-grayscale-2, transparent, $pv-grayscale-3);
+	border-color: $pv-grayscale-3;
+
 }
